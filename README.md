@@ -17,45 +17,30 @@ A responsive, animated chatbot interface for **Kishkinda University** that provi
 
 ---
 
-## 🔁 Flowchart (with Symbols)
+✏️ Algorithm
 
-text
-┌────────────────────┐
-│  User Sends Query  │
-└─────────┬──────────┘
-          │
-          ▼
-┌────────────────────────────┐
-│  Frontend sends POST /get  │
-└─────────┬──────────────────┘
-          │
-          ▼
-┌────────────────────────────┐
-│ Flask backend receives msg │
-└─────────┬──────────────────┘
-          │
-          ▼
-┌────────────────────────────┐
-│ Check keywords in message  │
-└─────────┬──────────────────┘
-          │        ┌───────────────┐
-          │  Yes → │ Return reply  │
-          │        └────┬──────────┘
-          │             │
-          ▼             ▼
-  No Match → ┌────────────────────────┐
-             │ Return default message│
-             └──────────┬─────────────┘
-                        │
-                        ▼
-           ┌────────────────────────────┐
-           │ Frontend shows loading (...)│
-           └────────────┬───────────────┘
-                        │
-                        ▼
-        ┌────────────────────────────────┐
-        │ Display bot response on screen │
-        └────────────────────────────────┘
+1.Begin the program by launching the Flask web server.
+
+2.When the root URL (/) is visited, load the HTML + CSS interface.
+
+3.Wait for the user to type a message in the chat input field.
+
+4.Capture that message and send it to the Flask backend using a POST request (/get).
+
+5.In the Flask app, convert the message to lowercase.
+
+6.Check if the message contains known keywords like "faculty", "course", "fees", etc.
+
+7.Match the message using if-elif conditions to return a suitable predefined response.
+
+8.Use HTML tags (like <br> or <ol>) to format the response if needed.
+
+9.In the frontend, show a typing animation with three dots to simulate delay.
+
+10.After a short delay, display the bot's final message in the chat window.
+
+11.Return to step 3 to handle the next message from the user.
+
 
 
 
