@@ -28,9 +28,9 @@ A responsive, animated chatbot interface for **Kishkinda University** that provi
 
 6.The backend checks the message for known keywords like "faculty", "fees", "course", "location", etc.
 
-7.Based on the keyword matched, the server uses a series of if-elif conditions to determine the appropriate response.
-
-8.The response is formatted using HTML tags like <br> or <ol> to make it clear and readable.
+7. The response is formatted using HTML tags like `<br>` or `<code>` to make it clear and readable.
+  
+8. Based on the keyword matched, the server uses a series of if-elif conditions to determine the appropriate response.
 
 9.On the frontend, a typing animation with dots is shown to simulate a delay.
 
