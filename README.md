@@ -20,25 +20,15 @@ A responsive, animated chatbot interface for **Kishkinda University** that provi
 ✏️ Algorithm (Step-by-Step Process)
 
 1.Start the program by launching the Flask web server.
-
 2.When a user visits the root URL (/), render the chatbot interface using HTML and CSS.
-
 3.The chatbot UI waits for the user to type a message into the input field.
-
 4.Once the user submits a message, JavaScript sends a POST request to the Flask server (/get).
-
 5.The Flask server receives the message and converts it to lowercase for easier comparison.
-
 6.The backend checks the message for known keywords like "faculty", "fees", "course", "location", etc.
-
 7.Based on the keyword matched, the server uses a series of if-elif conditions to determine the appropriate response.
-
 8.The response is formatted using HTML tags like <br> or <ol> to make it clear and readable.
-
 9.On the frontend, a typing animation with dots is shown to simulate a delay.
-
 10.After a few seconds, the animation is replaced with the actual response, which is displayed in the chat box.
-
 11.The chatbot then waits for the next message from the user, continuing the loop.
 
 2.1This step-by-step process makes the chatbot user-friendly, realistic, and responsive to multiple kinds of queries.
