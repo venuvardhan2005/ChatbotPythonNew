@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Bot</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+
+
+    <div id="splash-screen">
+        <img src="https://www.kishkindauniversity.edu.in/images/logo-kis.png" alt="KU Logo" class="splash-logo" />
+
+        <h2><span style="color: #13325B;">KISHKINDA</span> <span style="color: goldenrod;">UNIVERSITY</span>
+        </h2>
+        <h2>
+            <span style="color: orange;">CHAT</span> <span style="color: yellow;">BOT</span>
+        </h2>
+
+        <footer class="footer">
+            <p>Powered by <strong> K Manthesh</strong></p>
+        </footer>
+
+    </div>
+
+    <!-- 🔸 Chatbot UI -->
+    <div class="chat-container" id="chat-container" style="display: none;">
+        <div class="chat-header">
+            <img src="https://www.kishkindauniversity.edu.in/images/logo-kis.png" alt="Chat Icon" />
+            <h2>KISHKINDA UNIVERSITY</h2>
+        </div>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type a message..." />
+            <button onclick="sendMessage()">➤</button>
+        </div>
+    </div>
+
+    <script>
+    // ⏳ Show splash screen for 5s, then show chatbot
+    window.addEventListener("load", () => {
+        setTimeout(() => {
+            document.getElementById("splash-screen").style.display = "none";
+            document.getElementById("chat-container").style.display = "flex";
+        }, 5000);
+    });
+
+    async function sendMessage() {
+        const input = document.getElementById("user-input");
+        const msg = input.value.trim();
+        if (!msg) return;
+
+        const box = document.getElementById("chat-box");
+
+        // Add user message with avatar
+        box.innerHTML += `
+        <div class="message-row user-row">
+            <div class="message user">${msg}</div>
+            <img src="https://static.vecteezy.com/system/resources/previews/027/951/137/non_2x/stylish-spectacles-guy-3d-avatar-character-illustrations-png.png" class="chat-avatar" />
+        </div>
+        `;
+
+        input.value = "";
+        box.scrollTop = box.scrollHeight;
+
+        // Add loading animation
+        const loadingEl = document.createElement("div");
+        loadingEl.className = "message-row bot-row";
+        loadingEl.innerHTML = `
+            <img src="https://www.kishkindauniversity.edu.in/images/logo-kis.png" class="chat-avatar" />
+            <div class="message bot loading-dots">Typing<span>.</span><span>.</span><span>.</span></div>
+        `;
+        box.appendChild(loadingEl);
+        box.scrollTop = box.scrollHeight;
+
+        // Wait 3 seconds (simulate typing delay)
+        await new Promise(resolve => setTimeout(resolve, 3000));
+
+        // Fetch response from backend
+        const res = await fetch("/get", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ msg })
+        });
+        const data = await res.json();
+
+        // Replace loading with bot reply
+        loadingEl.innerHTML = `
+            <img src="https://www.kishkindauniversity.edu.in/images/logo-kis.png" class="chat-avatar" />
+            <div class="message bot bot-highlight">${data.reply}</div>
+        `;
+        box.scrollTop = box.scrollHeight;
+    }
+</script>
+
+</body>
+
+</html>
