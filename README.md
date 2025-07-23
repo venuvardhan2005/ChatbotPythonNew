@@ -4,7 +4,6 @@
 
 A responsive, animated chatbot interface for **Kishkinda University** that provides instant answers to common student queries — such as faculty, courses, location, fees, and more. Built using **HTML, CSS, and Python (Flask)**, it simulates a helpful university assistant with a visually appealing interface and splash loading animation.
 
-
 ## 🌟 Features
 
 * Splash screen with animated logo.
@@ -41,12 +40,6 @@ A responsive, animated chatbot interface for **Kishkinda University** that provi
 
 2.1This step-by-step process makes the chatbot user-friendly, realistic, and responsive to multiple kinds of queries.
 
-
-
-
-
-
-
 ## ❓ Questions Answered by Chatbot
 
 * Courses / Programmes offered
@@ -75,8 +68,6 @@ A responsive, animated chatbot interface for **Kishkinda University** that provi
 * Extra Activities
 * Admission Section
 
----
-
 ## 🚀 How to Run This Project
 
 1. **Install Python & Flask**:
@@ -86,7 +77,6 @@ pip install flask
 
 
 2. **Project Structure**:
-
 
 project-folder/
 │
@@ -110,6 +100,5 @@ python app.py
 http://localhost:5000
 Now chat with Kishkinda University bot!
 Feel free to customize the UI, responses, or extend the logic to use a proper NLP backend or database.
-
 
 Powered By Doutly.com
