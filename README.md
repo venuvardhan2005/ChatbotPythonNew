@@ -123,3 +123,6 @@ python app.py
 http://localhost:5000
 Now chat with Kishkinda University bot!
 Feel free to customize the UI, responses, or extend the logic to use a proper NLP backend or database.
+
+
+Powered By Doutly.com
