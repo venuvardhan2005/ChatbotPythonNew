@@ -80,7 +80,7 @@ def get_bot_response():
         Our faculty members are:
         <ol>
           <li>Dr. Rajshree V. Bivadar (HOD)</li>
-          <li>Dr. ShivKISHKINDA UNIVERSITYmar</li>
+          <li>Dr. Shivu Kumar</li>
           <li>Dr. Mivakeshi</li>
           <li>Mr. Vannur Swamy</li>
           <li>Mr. Mujeeb Ansari</li>
